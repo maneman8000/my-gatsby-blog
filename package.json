@@ -8,8 +8,12 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.5",
+    "@material/button": "^0.42.0",
+    "@material/ripple": "^0.42.0",
     "gatsby": "^2.0.76",
     "gatsby-image": "^2.0.22",
+    "gatsby-plugin-emotion": "^4.0.1",
     "gatsby-plugin-feed": "^2.0.8",
     "gatsby-plugin-google-analytics": "^2.0.5",
     "gatsby-plugin-manifest": "^2.0.5",

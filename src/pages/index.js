@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import { css } from "@emotion/core"
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
@@ -24,11 +25,11 @@ class BlogIndex extends React.Component {
           return (
             <div key={node.fields.slug}>
               <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
+                css={css`
+                  margin-bottom: ${rhythm(1 / 4)};
+                `}
               >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <Link css={css`box-shadow: none`} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
