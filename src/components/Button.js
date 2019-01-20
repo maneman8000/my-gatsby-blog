@@ -1,13 +1,16 @@
 import React from 'react'
-import {MDCRipple} from '@material/ripple';
-import "@material/button/dist/mdc.button.css"
+import Button from '@material/react-button'
+import {withRipple} from '@material/react-ripple'
 
-export default ({ className, children }) => (
-  <button
-    ref={c => new MDCRipple(c)}
-    type="button"
-    className={`mdc-button ${className}`}
-  >
-    {children}
-  </button>
-)
+const MyButton = ({ children, initRipple, unbounded, ...otherProps }) => {
+  return (
+    <Button
+      ref={initRipple}
+      {...otherProps}
+    >
+      {children}
+    </Button>
+  )
+}
+
+export default withRipple(MyButton);

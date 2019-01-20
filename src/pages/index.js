@@ -1,70 +1,107 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
-import { css } from "@emotion/core"
-
-import Bio from '../components/Bio'
 import Layout from '../components/Layout'
-import SEO from '../components/seo'
-import { rhythm } from '../utils/typography'
+import {Cell, Grid, Row} from '@material/react-layout-grid';
+import Card, { CardPrimaryContent } from "@material/react-card";
+import { css } from "@emotion/core"
+import MaterialIcon from '@material/react-material-icon';
+import { Link } from 'gatsby';
 
-class BlogIndex extends React.Component {
+const cardCss = css`
+  margin: 24px 0;
+`;
+
+const linkCss = css`
+  width: 100%;
+  height: 160px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+class Home extends React.Component {
   render() {
     const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
-        <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                css={css`
-                  margin-bottom: ${rhythm(1 / 4)};
-                `}
-              >
-                <Link css={css`box-shadow: none`} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })}
+      <Layout>
+        <div className="container">
+          <Grid>
+            <Row>
+              <Cell columns={6}>
+                <Card css={cardCss}>
+                  <CardPrimaryContent>
+                    <Link css={linkCss} to={`/profile`}>
+                      <h3 className="mdc-typography--headline6">Profile</h3>
+                    </Link>
+                  </CardPrimaryContent>
+                </Card>
+              </Cell>
+              <Cell columns={6}>
+                <Card css={cardCss}>
+                  <CardPrimaryContent>
+                    <Link css={linkCss} to={`/schedule`}>
+                      <h3 className="mdc-typography--headline6">Schedule</h3>
+                    </Link>
+                  </CardPrimaryContent>
+                </Card>
+              </Cell>
+            </Row>
+            <Row>
+              <Cell columns={6}>
+                <Card css={cardCss}>
+                  <CardPrimaryContent>
+                    <Link css={linkCss} to={`/work`}>
+                      <h3 className="mdc-typography--headline6">Work</h3>
+                    </Link>
+                  </CardPrimaryContent>
+                </Card>
+              </Cell>
+              <Cell columns={6}>
+                <Card css={cardCss}>
+                  <CardPrimaryContent>
+                    <Link css={linkCss} to={`/blog`}>
+                      <h3 className="mdc-typography--headline6">Blog</h3>
+                    </Link>
+                  </CardPrimaryContent>
+                </Card>
+              </Cell>
+            </Row>
+            <Row>
+              <Cell columns={6}>
+                <Card css={cardCss}>
+                  <CardPrimaryContent>
+                    <a css={linkCss} href={`https://facebook.com`}>
+                    <h3 className="mdc-typography--headline6"><i className="fab fa-facebook"></i> Facebook</h3>
+                    </a>
+                  </CardPrimaryContent>
+                </Card>
+              </Cell>
+              <Cell columns={6}>
+                <Card css={cardCss}>
+                  <CardPrimaryContent>
+                    <a css={linkCss} href={`https://twitter.com`}>
+                    <h3 className="mdc-typography--headline6"><i className="fab fa-twitter"></i> Twitter</h3>
+                    </a>
+                  </CardPrimaryContent>
+                </Card>
+              </Cell>
+            </Row>
+            <Row>
+              <Cell columns={12}>
+                <Card css={cardCss}>
+                  <CardPrimaryContent>
+                    <a css={linkCss} href={`mailto:hoge@example.com`}>
+                    <h3 className="mdc-typography--headline6"><MaterialIcon icon='mail_outline' /> Contact</h3>
+                    </a>
+                  </CardPrimaryContent>
+                </Card>
+              </Cell>
+              </Row>
+          </Grid>
+        </div>
       </Layout>
     )
   }
 }
 
-export default BlogIndex
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-          }
-        }
-      }
-    }
-  }
-`
+export default Home;

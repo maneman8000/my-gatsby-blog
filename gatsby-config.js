@@ -75,5 +75,11 @@ module.exports = {
     //   },
     // },
     `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        includePaths: [`${__dirname}/node_modules/`],
+      },
+    },
   ],
 }

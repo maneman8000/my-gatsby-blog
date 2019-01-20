@@ -1,10 +1,8 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-
-import Bio from '../components/Bio'
+import {Cell, Grid, Row} from '@material/react-layout-grid';
+import { css } from "@emotion/core"
 import Layout from '../components/Layout'
-import SEO from '../components/seo'
-import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -14,50 +12,50 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <Bio />
-
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
+        <div class="container blog-frame">
+          <Grid>
+            <Row>
+              <Cell columns={12} css={css`padding: 16px;`}>
+                <h2 className="mdc-typography--headline2">{post.frontmatter.title}</h2>
+                <p
+                  style={{
+                    display: `block`,
+                    marginBottom: '24px',
+                    marginTop: '24px',
+                  }}
+                >
+                  {post.frontmatter.date}
+                </p>
+                <div className="blog-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+                <hr
+                  style={{
+                    marginBottom: '8px',
+                  }}
+                />
+                <Grid>
+                  <Row>
+                    <Cell columns={4}>
+                      {previous && (
+                        <Link className="mdc-button" to={previous.fields.slug} rel="prev">
+                          ← {previous.frontmatter.title}
+                        </Link>
+                      )}
+                    </Cell>
+                    <Cell columns={4}>
+                    </Cell>
+                    <Cell columns={4}>
+                      {next && (
+                        <Link className="mdc-button" to={next.fields.slug} rel="next">
+                          {next.frontmatter.title} →
+                        </Link>
+                      )}
+                    </Cell>
+                  </Row>
+                </Grid>
+              </Cell>
+            </Row>
+          </Grid>
+        </div>        
       </Layout>
     )
   }
