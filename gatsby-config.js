@@ -24,6 +24,7 @@ module.exports = {
     title: `Test Blog`,
     author: `Akihiro Nishiya`,
     description: `A starter blog demonstrating what Gatsby can do.`,
+    siteUrl: `http://example.com`,
   },
   plugins: [
     {
