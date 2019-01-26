@@ -17,7 +17,7 @@ class BlogIndex extends React.Component {
             <Row>
               <Cell columns={10}>
                 {posts.map(({ node }) => {
-                  const title = node.frontmatter.title || node.fields.slug
+                  const title = node.fields.title || node.fields.slug
                   return (
                     <Card key={node.fields.slug} css={css`
                       margin: 48px 16px;
@@ -29,7 +29,7 @@ class BlogIndex extends React.Component {
                               {title}
                             </h6>
                             <h7 className="mdc-typography--subtitle2">
-                              {node.frontmatter.date}
+                              {node.fields.date}
                             </h7>
                             <div css={css`margin-top: 24px;`}>
                               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
@@ -61,16 +61,14 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [fields___date], order: DESC }) {
       edges {
         node {
           excerpt
           fields {
-            slug
-          }
-          frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            slug
           }
         }
       }

@@ -16,7 +16,7 @@ class BlogPostTemplate extends React.Component {
           <Grid>
             <Row>
               <Cell columns={12} css={css`padding: 16px;`}>
-                <h2 className="mdc-typography--headline2">{post.frontmatter.title}</h2>
+                <h2 className="mdc-typography--headline2">{post.fields.title}</h2>
                 <p
                   style={{
                     display: `block`,
@@ -24,7 +24,7 @@ class BlogPostTemplate extends React.Component {
                     marginTop: '24px',
                   }}
                 >
-                  {post.frontmatter.date}
+                  {post.fields.date}
                 </p>
                 <div className="blog-content" dangerouslySetInnerHTML={{ __html: post.html }} />
                 <hr
@@ -37,7 +37,7 @@ class BlogPostTemplate extends React.Component {
                     <Cell columns={4}>
                       {previous && (
                         <Link className="mdc-button" to={previous.fields.slug} rel="prev">
-                          ← {previous.frontmatter.title}
+                          ← {previous.fields.title}
                         </Link>
                       )}
                     </Cell>
@@ -46,7 +46,7 @@ class BlogPostTemplate extends React.Component {
                     <Cell columns={4}>
                       {next && (
                         <Link className="mdc-button" to={next.fields.slug} rel="next">
-                          {next.frontmatter.title} →
+                          {next.fields.title} →
                         </Link>
                       )}
                     </Cell>
@@ -75,7 +75,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
-      frontmatter {
+      fields {
         title
         date(formatString: "MMMM DD, YYYY")
       }
