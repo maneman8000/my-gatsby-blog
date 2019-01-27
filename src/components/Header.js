@@ -3,6 +3,7 @@ import { css } from "@emotion/core"
 import IconButton from '@material/react-icon-button';
 import MaterialIcon from '@material/react-material-icon';
 import Nav from './Nav';
+import img from '../../content/assets/home-bg.jpg';
 
 export default ({onMenuClick}) => (
   <header className="mdc-toolbar">
@@ -30,7 +31,7 @@ export default ({onMenuClick}) => (
       position: relative;
       background: no-repeat center center;
       background-size: cover;
-      background-image: url('/images/home-bg2.jpg');
+      background-image: url('${img}');
       height: 520px;
     `}>
       <div css={css`
