@@ -32,7 +32,7 @@ export default ({onMenuClick}) => (
       background: no-repeat center center;
       background-size: cover;
       background-image: url('${img}');
-      height: 520px;
+      height: 420px;
     `}>
       <div css={css`
         position: absolute;
@@ -40,7 +40,7 @@ export default ({onMenuClick}) => (
         left: 0;
         height: 100%;
         width: 100%;
-        background-color: #212529;
+        background-color: #cccccc;
         opacity: .5;
       `}>
       </div>
@@ -50,10 +50,10 @@ export default ({onMenuClick}) => (
         left: 0;
         width: 100%;
         text-align: center;
-        padding: 210px 0;
+        padding: 162px 0;
       `}>
         <h1 className="mdc-typography--headline1" css={css`
-          color: rgba(255,255,255,0.87);
+          color: #C45E6C;
         `}>テストサイト</h1>
       </div>
     </div>

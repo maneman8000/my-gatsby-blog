@@ -1,12 +1,17 @@
 @import "./reset.css";
 
-$mdc-theme-primary: #34474F;
-$mdc-theme-on-primary: rgba(255,255,255,0.87);
-$mdc-theme-secondary: #f5f5f5;
+// $mdc-theme-primary: #34474F;
+// $mdc-theme-on-primary: rgba(255,255,255,0.87);
+// #183c39
+// #766947
+// #bf9555
+$mdc-theme-primary: #C45E6C;
+$mdc-theme-on-primary: #f5f5f5;
+$mdc-theme-secondary: #ffffff;
 $mdc-theme-on-secondary: #666666;
 $mdc-theme-surface: #FFFFFF;
 $mdc-theme-on-surface: #666666;
-$mdc-theme-background: #FFFFFF;
+$mdc-theme-background: #fbf5f1;
 $mdc-theme-on-background: #666666;
 
 $mdc-typography-font-family: "游ゴシック体, Yu Gothic, YuGothic, ヒラギノ角ゴシック Pro, Hiragino Kaku Gothic Pro, メイリオ, Meiryo, Osaka, ＭＳ Ｐゴシック, MS PGothic, ßsans-serif";
@@ -49,6 +54,7 @@ $mdc-typography-styles-headline6: (
 @import url('https://fonts.googleapis.com/css?family=Material+Icons');
 
 body {
+  background-color: $mdc-theme-background;
   color: $mdc-theme-on-secondary;
 }
 
@@ -103,7 +109,7 @@ a:hover {
 }
 
 .mdc-card {
-  @include mdc-card-fill-color($mdc-theme-secondary)
+  @include mdc-card-fill-color($mdc-theme-surface)
 }
 
 .container {
@@ -114,6 +120,7 @@ a:hover {
 
 .blog-frame {
   @include mdc-elevation(4);
+  background-color: $mdc-theme-surface;
 }
 
 .blog-content {
