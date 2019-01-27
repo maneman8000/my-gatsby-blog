@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby';
 import { css } from "@emotion/core"
 import IconButton from '@material/react-icon-button';
 import MaterialIcon from '@material/react-material-icon';
@@ -6,7 +7,7 @@ import Nav from './Nav';
 import img from '../../content/assets/home-bg.jpg';
 
 export default ({onMenuClick, location}) => (
-  <header>
+  <header className="main-header">
     <div className="mdc-toolbar mdc-toolbar--fixed">
     <div className="mdc-toolbar__row">
       <section className="mdc-toolbar__section mdc-toolbar__section--align-start">
@@ -61,7 +62,7 @@ export default ({onMenuClick, location}) => (
       `}>
         <h1 className="mdc-typography--headline1" css={css`
           color: #C45E6C;
-        `}>テストサイト</h1>
+        `}><Link to={`/`}>テストサイト</Link></h1>
       </div>
     </div>
   </header>
