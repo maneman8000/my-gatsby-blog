@@ -54,16 +54,16 @@ class Nav extends React.Component {
         <ListItem tag={Link} to={`/`} shouldFocus tabIndex={1} onClick={this.onClick}>
           <ListItemText primaryText='Top'/>
         </ListItem>
-        <ListItem tag={TLink} to={`section2`} shouldFocus tabIndex={2} onClick={this.onClick}>
+        <ListItem tag={TLink} to={`section2`} tabIndex={2} onClick={this.onClick}>
           <ListItemText primaryText='Profile'/>
         </ListItem>
-        <ListItem tag={TLink} to={`section3`} shouldFocus tabIndex={3} onClick={this.onClick}>
+        <ListItem tag={TLink} to={`section3`} tabIndex={3} onClick={this.onClick}>
           <ListItemText primaryText='Schedule'/>
         </ListItem>
-        <ListItem tag={TLink} to={`section4`} shouldFocus tabIndex={4} onClick={this.onClick}>
+        <ListItem tag={TLink} to={`section4`} tabIndex={4} onClick={this.onClick}>
           <ListItemText primaryText='Work'/>
         </ListItem>
-        <ListItem tag={Link} to={`/blog`} shouldFocus tabIndex={5} onClick={this.onClick}>
+        <ListItem tag={Link} to={`/blog`} tabIndex={5} onClick={this.onClick}>
           <ListItemText primaryText='Blog'/>
         </ListItem>
       </List>
