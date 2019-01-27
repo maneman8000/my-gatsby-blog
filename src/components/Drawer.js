@@ -25,10 +25,10 @@ class MyDrawer extends React.Component {
           onClose={this.onDrawerClose}
         >
           <DrawerContent>
-            <Nav />
+            <Nav location={this.props.location} closeDrawer={this.onDrawerClose} />
           </DrawerContent>
         </Drawer>
-        <Header onMenuClick={() => this.setState({open: !this.state.open})} />
+        <Header location={this.props.location} onMenuClick={() => this.setState({open: !this.state.open})} />
       </div>
     )
   }

@@ -12,7 +12,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <div class="container blog-frame">
+        <div className="container blog-frame">
           <Grid>
             <Row>
               <Cell columns={12} css={css`padding: 16px;`}>

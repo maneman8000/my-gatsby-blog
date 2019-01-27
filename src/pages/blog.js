@@ -11,8 +11,8 @@ class BlogIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout>
-        <div class="container">
+      <Layout location={this.props.location}>
+        <div className="container">
           <Grid>
             <Row>
               <Cell columns={10}>
@@ -25,12 +25,12 @@ class BlogIndex extends React.Component {
                       <Link to={node.fields.slug}>
                         <CardPrimaryContent>
                           <div css={css`padding: 24px;`}>
-                            <h6 className="mdc-typography--headline6">
+                            <h5 className="mdc-typography--headline6">
                               {title}
-                            </h6>
-                            <h7 className="mdc-typography--subtitle2">
+                            </h5>
+                            <h6 className="mdc-typography--subtitle2">
                               {node.fields.date}
-                            </h7>
+                            </h6>
                             <div css={css`margin-top: 24px;`}>
                               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                             </div>

@@ -23,83 +23,12 @@ class Home extends React.Component {
     const { data } = this.props
 
     return (
-      <Layout>
-        <div className="container">
-          <Grid>
-            <Row>
-              <Cell columns={6}>
-                <Card css={cardCss}>
-                  <CardPrimaryContent>
-                    <Link css={linkCss} to={`/profile`}>
-                      <h3 className="mdc-typography--headline6">Profile</h3>
-                    </Link>
-                  </CardPrimaryContent>
-                </Card>
-              </Cell>
-              <Cell columns={6}>
-                <Card css={cardCss}>
-                  <CardPrimaryContent>
-                    <Link css={linkCss} to={`/schedule`}>
-                      <h3 className="mdc-typography--headline6">Schedule</h3>
-                    </Link>
-                  </CardPrimaryContent>
-                </Card>
-              </Cell>
-            </Row>
-            <Row>
-              <Cell columns={6}>
-                <Card css={cardCss}>
-                  <CardPrimaryContent>
-                    <Link css={linkCss} to={`/work`}>
-                      <h3 className="mdc-typography--headline6">Work</h3>
-                    </Link>
-                  </CardPrimaryContent>
-                </Card>
-              </Cell>
-              <Cell columns={6}>
-                <Card css={cardCss}>
-                  <CardPrimaryContent>
-                    <Link css={linkCss} to={`/blog`}>
-                      <h3 className="mdc-typography--headline6">Blog</h3>
-                    </Link>
-                  </CardPrimaryContent>
-                </Card>
-              </Cell>
-            </Row>
-            <Row>
-              <Cell columns={6}>
-                <Card css={cardCss}>
-                  <CardPrimaryContent>
-                    <a css={linkCss} href={`https://facebook.com`}>
-                    <h3 className="mdc-typography--headline6"><i className="fab fa-facebook"></i> Facebook</h3>
-                    </a>
-                  </CardPrimaryContent>
-                </Card>
-              </Cell>
-              <Cell columns={6}>
-                <Card css={cardCss}>
-                  <CardPrimaryContent>
-                    <a css={linkCss} href={`https://twitter.com`}>
-                    <h3 className="mdc-typography--headline6"><i className="fab fa-twitter"></i> Twitter</h3>
-                    </a>
-                  </CardPrimaryContent>
-                </Card>
-              </Cell>
-            </Row>
-            <Row>
-              <Cell columns={12}>
-                <Card css={cardCss}>
-                  <CardPrimaryContent>
-                    <a css={linkCss} href={`mailto:hoge@example.com`}>
-                    <h3 className="mdc-typography--headline6"><MaterialIcon icon='mail_outline' /> Contact</h3>
-                    </a>
-                  </CardPrimaryContent>
-                </Card>
-              </Cell>
-              </Row>
-          </Grid>
-        </div>
-      </Layout>
+      <Layout location={this.props.location}>
+        <section id="section1" className="section"><p>Section1</p></section>
+        <section id="section2" className="section"><p>Section2</p></section>
+        <section id="section3" className="section"><p>Section3</p></section>
+        <section id="section4" className="section"><p>Section4</p></section>
+     </Layout>
     )
   }
 }

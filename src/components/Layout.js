@@ -6,11 +6,11 @@ import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
 import "@fortawesome/fontawesome-free/scss/brands.scss";
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
+    const { location, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     return (
       <div>
-        <Drawer />
+        <Drawer location={location} />
         {children}
         <footer css={css`
           width: 100%;

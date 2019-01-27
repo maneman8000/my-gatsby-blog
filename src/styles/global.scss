@@ -55,8 +55,20 @@ $mdc-typography-styles-headline6: (
 @import url('https://fonts.googleapis.com/css?family=Material+Icons');
 
 body {
-  background-color: $mdc-theme-background;
+  /* Background pattern from Toptal Subtle Patterns */
+  background: url("../../content/assets/light_wool.png");
   color: $mdc-theme-on-secondary;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (   min--moz-device-pixel-ratio: 2),
+       only screen and (     -o-min-device-pixel-ratio: 2/1),
+       only screen and (        min-device-pixel-ratio: 2),
+       only screen and (                min-resolution: 192dpi),
+       only screen and (                min-resolution: 2dppx) {
+  body {
+    background-image: url("../../content/assets/light_wool_@2X.png");
+  }
 }
 
 a:any-link {
@@ -77,6 +89,7 @@ a:hover {
 .mdc-toolbar {
   @include mdc-toolbar-ink-color($mdc-theme-on-primary);
   @include mdc-toolbar-fill-color($mdc-theme-primary);
+  height: 64px;
   a {
     color: $mdc-theme-on-primary;
   }
@@ -101,16 +114,42 @@ a:hover {
   .drawer-menu {
     display: none;
   }
+  .mdc-toolbar .mdc-toolbar__section.mdc-toolbar__section--align-start {
+    flex-grow: 2;
+  }
 }
 
 @media screen and (max-width: 580px) {
   .mdc-list.header-nav {
     display: none;
   }
+  .mdc-toolbar .mdc-toolbar__section.mdc-toolbar__section--align-end {
+    flex-grow: 2;
+  }
 }
 
 .mdc-card {
   @include mdc-card-fill-color($mdc-theme-surface)
+}
+
+.section {
+  width: 100%;
+  height: 800px;
+  margin: 0;
+}
+
+#section1 {
+}
+
+#section2 {
+  background-color: #D7E0E1;
+}
+
+#section3 {
+}
+
+#section4 {
+  background-color: #E9DDD4;
 }
 
 .container {

@@ -5,14 +5,15 @@ import MaterialIcon from '@material/react-material-icon';
 import Nav from './Nav';
 import img from '../../content/assets/home-bg.jpg';
 
-export default ({onMenuClick}) => (
-  <header className="mdc-toolbar">
+export default ({onMenuClick, location}) => (
+  <header>
+    <div className="mdc-toolbar mdc-toolbar--fixed">
     <div className="mdc-toolbar__row">
       <section className="mdc-toolbar__section mdc-toolbar__section--align-start">
         <IconButton onClick={onMenuClick} className="drawer-menu">
           <MaterialIcon icon="menu" />
         </IconButton>
-        <Nav className="header-nav" />
+        <Nav listClassName="header-nav" location={location} closeDrawer={() => {}} />
         <span className="mdc-toolbar__title"></span>
       </section>
       <section className="mdc-toolbar__section mdc-toolbar__section--align-end"   role="toolbar">
@@ -26,6 +27,7 @@ export default ({onMenuClick}) => (
           <MaterialIcon icon='mail_outline' />
         </IconButton>
      </section>
+    </div>
     </div>
     <div css={css`
       position: relative;
@@ -50,7 +52,12 @@ export default ({onMenuClick}) => (
         left: 0;
         width: 100%;
         text-align: center;
-        padding: 162px 0;
+        margin-top: 66px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 354px;
       `}>
         <h1 className="mdc-typography--headline1" css={css`
           color: #C45E6C;
