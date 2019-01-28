@@ -52,7 +52,7 @@ class Nav extends React.Component {
     }
     return (
       <List tag="nav" wrapFocus={true} className={listClassName}>
-        <ListItem tag={Link} to={`/`} shouldFocus tabIndex={tabIndex} onClick={this.onClick}>
+        <ListItem tag={Link} to={`/`} tabIndex={tabIndex} onClick={this.onClick}>
           <ListItemText primaryText='Top'/>
         </ListItem>
         <ListItem tag={TLink} to={`section2`} tabIndex={tabIndex + 1} onClick={this.onClick}>

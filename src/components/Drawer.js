@@ -21,16 +21,6 @@ class MyDrawer extends React.Component {
     this.setState({open: false});
   }
 
-  onOpen = () => {
-    //    console.log(document.activeElement);
-    //    document.activeElement.blur();
-    //    if (this.releaseFocus) {
-    //      this.releaseFocus();
-    //      console.log('relase focus')  
-//    }
-  //    //this.mainContentEl.querySelector('input, button').focus();
-  }
-
   render() {
     return (
       <div>
@@ -38,7 +28,6 @@ class MyDrawer extends React.Component {
           modal
           open={this.state.open}
           onClose={this.onClose}
-          onOpen={this.onOpen}
         >
           <DrawerContent>
             <Nav location={this.props.location} tabIndex={10} closeDrawer={this.onClose} />

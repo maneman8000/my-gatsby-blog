@@ -14,7 +14,7 @@ export default ({onMenuClick, location}) => (
         <IconButton onClick={onMenuClick} className="drawer-menu">
           <MaterialIcon icon="menu" />
         </IconButton>
-        <Nav listClassName="header-nav" location={location} closeDrawer={() => {}} />
+        <Nav listClassName="header-nav" location={location} tabIndex={1} closeDrawer={() => {}} />
         <span className="mdc-toolbar__title"></span>
       </section>
       <section className="mdc-toolbar__section mdc-toolbar__section--align-end"   role="toolbar">
