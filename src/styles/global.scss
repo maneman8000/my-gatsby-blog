@@ -89,7 +89,6 @@ a:hover {
 .mdc-toolbar {
   @include mdc-toolbar-ink-color($mdc-theme-on-primary);
   @include mdc-toolbar-fill-color($mdc-theme-primary);
-  height: 64px;
   a {
     color: $mdc-theme-on-primary;
   }
@@ -110,7 +109,7 @@ a:hover {
   }
 }
 
-@media screen and (min-width: 581px) {
+@media screen and (min-width: 600px) {
   .drawer-menu {
     display: none;
   }
@@ -119,7 +118,7 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 599px) {
   .mdc-list.header-nav {
     display: none;
   }
