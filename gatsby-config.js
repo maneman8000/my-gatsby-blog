@@ -95,5 +95,6 @@ module.exports = {
         includePaths: [`${__dirname}/node_modules/`],
       },
     },
+    `gatsby-plugin-polyfill-io`,
   ],
 }

@@ -71,7 +71,12 @@ body {
   }
 }
 
-a:any-link {
+:link {
+  color: $mdc-theme-on-secondary;
+  text-decoration: none;
+}
+
+:visited {
   color: $mdc-theme-on-secondary;
   text-decoration: none;
 }
@@ -133,7 +138,10 @@ a:hover {
 
 .main-header {
   h1 {
-    a:any-link {
+    :link {
+      color: $mdc-theme-primary;
+    }
+    :visited {
       color: $mdc-theme-primary;
     }
   }
