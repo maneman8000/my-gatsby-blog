@@ -7,6 +7,7 @@ import ReactScroll from 'react-scroll';
 const protoTypes = {
   location: PropTypes.object.isRequired,
   closeDrawer: PropTypes.func.isRequired,
+  tabIndex: PropTypes.number.isRequired,
   listClassName: PropTypes.string,
 };
 
@@ -23,7 +24,7 @@ class TopLink extends React.Component {
 class ScrollLink extends React.Component {
   render() {
     return (
-      <ReactScroll.Link spy={false} smooth={true} duration={500} {...this.props} />
+      <ReactScroll.Link href="#" spy={false} smooth={true} duration={500} {...this.props} />
     );
   }
 }
@@ -41,7 +42,7 @@ class Nav extends React.Component {
   }
  
   render() {
-    const { location, listClassName } = this.props;
+    const { location, listClassName, tabIndex } = this.props;
     let TLink;
     if (location.pathname === "/") {
       TLink = ScrollLink;
@@ -51,19 +52,19 @@ class Nav extends React.Component {
     }
     return (
       <List tag="nav" wrapFocus={true} className={listClassName}>
-        <ListItem tag={Link} to={`/`} shouldFocus tabIndex={1} onClick={this.onClick}>
+        <ListItem tag={Link} to={`/`} shouldFocus tabIndex={tabIndex} onClick={this.onClick}>
           <ListItemText primaryText='Top'/>
         </ListItem>
-        <ListItem tag={TLink} to={`section2`} tabIndex={2} onClick={this.onClick}>
+        <ListItem tag={TLink} to={`section2`} tabIndex={tabIndex + 1} onClick={this.onClick}>
           <ListItemText primaryText='Profile'/>
         </ListItem>
-        <ListItem tag={TLink} to={`section3`} tabIndex={3} onClick={this.onClick}>
+        <ListItem tag={TLink} to={`section3`} tabIndex={tabIndex + 2} onClick={this.onClick}>
           <ListItemText primaryText='Schedule'/>
         </ListItem>
-        <ListItem tag={TLink} to={`section4`} tabIndex={4} onClick={this.onClick}>
+        <ListItem tag={TLink} to={`section4`} tabIndex={tabIndex + 3} onClick={this.onClick}>
           <ListItemText primaryText='Work'/>
         </ListItem>
-        <ListItem tag={Link} to={`/blog`} tabIndex={5} onClick={this.onClick}>
+        <ListItem tag={Link} to={`/blog`} tabIndex={tabIndex + 4} onClick={this.onClick}>
           <ListItemText primaryText='Blog'/>
         </ListItem>
       </List>

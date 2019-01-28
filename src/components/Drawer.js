@@ -9,11 +9,26 @@ class MyDrawer extends React.Component {
     this.state = {
       open: false,
     }
-    this.onDrawerClose = this.onDrawerClose.bind(this);
+    this.onClose = this.onClose.bind(this);
+    this.toggleDrawer = this.toggleDrawer.bind(this);
   }
 
-  onDrawerClose = () => {
+  toggleDrawer = () => {
+    this.setState({open: !this.state.open});
+  }
+
+  onClose = () => {
     this.setState({open: false});
+  }
+
+  onOpen = () => {
+    //    console.log(document.activeElement);
+    //    document.activeElement.blur();
+    //    if (this.releaseFocus) {
+    //      this.releaseFocus();
+    //      console.log('relase focus')  
+//    }
+  //    //this.mainContentEl.querySelector('input, button').focus();
   }
 
   render() {
@@ -22,13 +37,14 @@ class MyDrawer extends React.Component {
         <Drawer 
           modal
           open={this.state.open}
-          onClose={this.onDrawerClose}
+          onClose={this.onClose}
+          onOpen={this.onOpen}
         >
           <DrawerContent>
-            <Nav location={this.props.location} closeDrawer={this.onDrawerClose} />
+            <Nav location={this.props.location} tabIndex={10} closeDrawer={this.onClose} />
           </DrawerContent>
         </Drawer>
-        <Header location={this.props.location} onMenuClick={() => this.setState({open: !this.state.open})} />
+        <Header location={this.props.location} onMenuClick={this.toggleDrawer} />
       </div>
     )
   }
